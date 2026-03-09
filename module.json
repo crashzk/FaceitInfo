@@ -1,0 +1,8 @@
+{
+    "name": "FaceitInfo",
+    "version": "1.0.3",
+    "description": "Creates a faceit info on user page",
+    "authors": ["Flames"],
+    "providers": ["Flute\\Modules\\FaceitInfo\\Providers\\FaceitInfoProvider"],
+    "dependencies": {}
+}
