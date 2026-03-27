@@ -8,7 +8,7 @@ Module for embedding Faceit statistics into Flute. Automatically adds a Faceit b
 
 Download the latest release and install it via the Flute CMS admin panel.
 
-Current version: **1.0.1**
+Current version: **2.0.0**
 
 ## Authors
 
