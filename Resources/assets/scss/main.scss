@@ -1,129 +1,110 @@
-$module-prefix: 'faceit-info';
+$faceit-accent: #FF5500;
 
-.#{$module-prefix} {
-    &-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-        background-color: var(--background-900);
-        border-radius: var(--border1);
-        padding: 12px;
-        margin-top: 1.3rem;
-        border: 1px solid var(--transp-1);
+.faceit-profile {
+    &__card {
+        padding: var(--space-xs) var(--space-md) var(--space-sm);
     }
 
-    &-header {
+    &__card-header {
         display: flex;
         align-items: center;
-        gap: 10px;
-        margin-bottom: 10px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid var(--background-800);
+        gap: var(--space-sm);
     }
 
-    &-level-icon {
-        width: 40px;
-        height: 40px;
+    &__level-icon {
+        width: 32px;
+        height: 32px;
         flex-shrink: 0;
     }
 
-    &-nickname {
-        font-weight: 700;
-        font-size: var(--p);
+    &__card-info {
+        flex: 1;
+        min-width: 0;
+    }
+
+    &__card-name {
+        font-size: var(--p-small);
+        font-weight: 600;
         color: var(--text);
-        transition: color 0.2s ease;
-        text-overflow: ellipsis;
-        overflow: hidden;
         white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.3;
+    }
+
+    &__country {
+        font-size: 10px;
+        font-weight: 500;
+        color: var(--text-500);
+        margin-left: 4px;
+    }
+
+    &__card-elo {
+        font-size: 10px;
+        font-weight: 600;
+        color: $faceit-accent;
+        letter-spacing: 0.02em;
+    }
+
+    &__link {
+        flex-shrink: 0;
+        color: var(--text-600);
+        transition: color var(--transition);
 
         &:hover {
-            color: var(--accent);
+            color: var(--text-300);
         }
     }
 
-    &-stats {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-        text-align: center;
+    &__quick-stats {
+        display: flex;
+        align-items: center;
+        gap: var(--space-sm);
+        margin-top: var(--space-xs);
+        padding-top: var(--space-xs);
+        border-top: 1px solid var(--transp-05);
+        flex-wrap: wrap;
     }
 
-    &-stat {
-        display: flex;
-        flex-direction: column;
+    &__quick-stat {
+        display: inline-flex;
         align-items: center;
+        gap: 3px;
 
         &-value {
-            font-weight: 700;
-            font-size: var(--h6);
-            color: var(--text);
-            margin-bottom: 2px;
-        }
-
-        &-value-name {
-            font-size: var(--h6);
-            text-wrap: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            max-width: 100%;
+            font-size: var(--small);
+            font-weight: 600;
+            color: var(--text-200);
+            font-variant-numeric: tabular-nums;
         }
 
         &-label {
-            font-size: var(--small);
-            color: var(--text-400);
+            font-size: 10px;
+            color: var(--text-500);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.03em;
         }
     }
 
-    &-profile-link {
-        font-size: var(--small);
-        color: var(--accent);
-        text-decoration: none;
-        margin-top: 4px;
-        align-self: flex-start;
-        transition: color 0.2s ease;
-
-        &:hover {
-            text-decoration: underline;
-            color: var(--accent-400);
-        }
+    &__recent {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        margin-top: var(--space-xs);
     }
 
-    &-recent-matches {
-        @extend .flex-center;
-        flex-direction: column;
-        margin-top: 20px;
-    }
+    &__recent-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        flex-shrink: 0;
 
-    &-matches {
-        &-title {
-            font-size: var(--small);
-            color: var(--text-400);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        &--win {
+            background: var(--success);
         }
 
-        &-results {
-            display: flex;
-            flex-direction: row;
-            gap: 4px;
-        }
-    }
-
-    &-match-result {
-        font-size: var(--small);
-        color: var(--text-400);
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-
-        &.faceit-info-match-win {
-            color: var(--success);
-        }
-
-        &.faceit-info-match-loss {
-            color: var(--error);
+        &--loss {
+            background: var(--error);
         }
     }
 }

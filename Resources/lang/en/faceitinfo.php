@@ -24,7 +24,7 @@ return [
         'failed' => 'Failed to save settings',
         'saved' => 'Settings saved successfully',
     ],
-    
+
     'level' => 'Level',
     'elo' => 'ELO',
     'matches' => 'MATCHES',
